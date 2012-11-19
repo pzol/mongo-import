@@ -16,7 +16,7 @@ module MongoImport
     def import
       raise "Could not find #{@opts.exec} in your PATH" unless system("which #{opts.exec} > /dev/null")
 
-      file = File.join(@path, "#{@collection}.json")
+      file = File.join(@path, "#{@db}.#{@collection}.json")
       cmd  = "#{opts.exec} --host #{opts.host} --port #{opts.port} --drop --db #{@db} --collection #{@collection} #{file}"
       system cmd
     end
