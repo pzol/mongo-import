@@ -1,6 +1,6 @@
 # MongoImport
 
-TODO: Write a gem description
+A wrapper to run mongo's `mongoimport` from specs.
 
 ## Installation
 
@@ -17,8 +17,19 @@ Or install it yourself as:
     $ gem install mongo-import
 
 ## Usage
-
-TODO: Write usage instructions here
+1. Create a directory `spec/snapshots`
+2. Run `mongoexport`
+3. Add a file called `db_name.collection_name.json` to the snapshots directory
+4. In your `spec_helper.rb` add:
+'''ruby
+RSpec.configure do |c|
+  c.include MongoImport
+end
+'''
+5. Use in your spec like a boss:
+'''ruby
+snapshot 'db_name.collection_name'
+'''
 
 ## Contributing
 
