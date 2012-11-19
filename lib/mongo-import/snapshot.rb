@@ -5,7 +5,8 @@ module MongoImport
   end
 
   class Snapshot
-    attr_reader :opts
+    attr_reader :opts, :db, :collection
+
     def initialize(db, collection, opts={})
       defaults = {:host => 'localhost', :port => 27017, :exec => 'mongoimport'}
       @opts = OpenStruct.new(defaults.merge(opts))
@@ -13,6 +14,7 @@ module MongoImport
       @path = 'spec/snapshots'
     end
 
+    # returns true if the import succeeded
     def import
       raise "Could not find #{@opts.exec} in your PATH" unless system("which #{opts.exec} > /dev/null")
 
