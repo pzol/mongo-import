@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = MongoImport::VERSION
   gem.authors       = ["Piotr Zolnierek"]
   gem.email         = ["pz@anixe.pl"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{A helper to restore snapshots created by mongoexport}
+  gem.summary       = %q{see description}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
