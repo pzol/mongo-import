@@ -21,17 +21,17 @@ Or install it yourself as:
 2. Run `mongoexport` and  redirect to a file called `db_name.collection_name.json` to the snapshots directory
 3. In your `spec_helper.rb` add:
 
-'''ruby
+```ruby
 RSpec.configure do |c|
   c.include MongoImport
 end
-'''
+```
 
 4. Use in your spec like a boss:
 
-'''ruby
+```ruby
 snapshot 'db_name.collection_name'
-'''
+```
 
 ## Contributing
 
