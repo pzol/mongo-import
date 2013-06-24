@@ -34,7 +34,7 @@ snapshot 'db_name.collection_name'
 ```
 or
 ```ruby
-snapshot 'file_name', :db => 'db_name', :collection => 'collection_name'
+snapshot 'file_name', :db => 'db_name', :collection => 'collection_name', :path => 'spec/snapshots'
 ```
 
 
