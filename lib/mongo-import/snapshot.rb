@@ -1,7 +1,8 @@
 module MongoImport
   def snapshot(expr, opts={})
     db, collection = expr.split('.')
-    Snapshot.new(expr, :db => opts[:db] || db, :collection => opts[:collection] || collection).import
+    opts = { db: db, collection: collection }.merge(opts)
+    Snapshot.new(expr, opts).import
   end
 
   class Snapshot
